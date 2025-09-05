@@ -33,7 +33,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Bot token from BotFather
-TOKEN = "8379945498:AAGtfGofVnPnoN8K_ayirg4-ifdeBgooLSk"
+TOKEN = os.getenv("BOT_TOKEN")
 
 # Add your user ID as moderator (replace with your actual user ID)
 MODERATOR_IDS = [6651946441]  # Add your user ID here
