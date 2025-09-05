@@ -9,4 +9,4 @@ services:
       - key: BOT_TOKEN
         value: your_bot_token_here
       - key: PYTHON_VERSION
-        value: 3.9.0
+        value: 3.11.9
