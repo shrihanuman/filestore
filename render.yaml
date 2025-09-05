@@ -1,12 +1,10 @@
 services:
   - type: web
     name: linkdropletbot
-    env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn linkdropletbot:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 60
+    dockerfilePath: Dockerfile
     envVars:
       - key: BOT_TOKEN
-        value: your_bot_token_here
-      - key: PYTHON_VERSION
-        value: 3.11.9
+        value: your_actual_bot_token_here
+      - key: PORT
+        value: 8080
