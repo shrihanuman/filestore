@@ -242,7 +242,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
             
             await update.message.reply_text(
                 f"⚠️ Please join our channels to use this bot:\n{channels_text}\n\n"
-                "After joining, click the button below:",
+                "After joining, click on /start command if below button is not working:",
                 reply_markup=InlineKeyboardMarkup(keyboard)
             )
             return
@@ -360,7 +360,7 @@ async def pdftolink(update: Update, context: ContextTypes.DEFAULT_TYPE):
             
             await update.message.reply_text(
                 f"⚠️ Please join our channels to use this feature:\n{channels_text}\n\n"
-                "After joining, click the button below:",
+                "After joining, click the button below or click on /start command:",
                 reply_markup=InlineKeyboardMarkup(keyboard)
             )
             return
@@ -689,7 +689,7 @@ async def settings_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"📝 Custom Caption Settings:\n\nCurrent: {current_caption}\n\n"
             "Send me your custom text that will appear below files:\n\n"
             "Example: `Download from our channel @example`\n\n"
-            "Send /cancel to keep the current setting.",
+            "And All Set.",
             parse_mode="Markdown"
         )
         context.user_data['awaiting_caption'] = True
@@ -736,7 +736,7 @@ async def settings_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "add_channel":
         await query.edit_message_text(
             "Send me the channel ID or username to add. For channels, you must add the bot as an admin first.\n\n"
-            "Send /cancel to abort."
+            "And All Set"
         )
         context.user_data['awaiting_channel'] = True
         
@@ -752,7 +752,7 @@ async def settings_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text(
             f"✅ Auto Delete has been {status}.\n\n"
             f"To change the auto delete time{time_text}, send me the number of minutes (e.g., 15).\n"
-            "Send /cancel to keep the current time."
+            "And All Set."
         )
         context.user_data['awaiting_auto_delete_time'] = True
         
