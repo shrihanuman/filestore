@@ -1,1 +1,1 @@
-worker: python linkdropletbot.py
+worker: python3 linkdropletbot.py
