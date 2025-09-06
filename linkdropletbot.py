@@ -1051,4 +1051,15 @@ def main():
     application.run_polling()
 
 if __name__ == '__main__':
+    import threading
+    
+    # Flask ko background thread pe chalana
+    def run_flask():
+        port = int(os.environ.get("PORT", 5000))
+        app.run(host="0.0.0.0", port=port)
+    
+    # Flask ko ek alag thread pe start karna
+    threading.Thread(target=run_flask).start()
+    
+    # Telegram bot ko chalana
     main()
